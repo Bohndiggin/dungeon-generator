@@ -12,9 +12,9 @@ class Dungeon{
     }
     addRooms(roomNum) {
         for(let i = 0;i<roomNum;i++) {
-            let xRoomSize = Math.floor(ranDumb(5, this.xMax-(this.xMax * 0.5)))
-            this.room.push(new Room(xRoomSize
-                , Math.floor(ranDumb(5, this.yMax-this.yMax*0.5))))
+            let xRoomSize = Math.floor(ranDumb(5, this.xMax-this.xMax * 0.5))
+            let yRoomSize = Math.floor(ranDumb(5, this.yMax-this.yMax * 0.5))
+            this.room.push(new Room(xRoomSize, yRoomSize))
         }
     }
     arrangeRooms() {
