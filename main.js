@@ -18,9 +18,11 @@ class Dungeon{
         }
     }
     arrangeRooms() {
-        for(let i = 0;i<this.room.length;i++) {
-            this.room[i].xAxis = 0 //arrange
-            this.room[i].yAxis = 0 //arrange
+        this.room[0].xAxis = 1
+        this.room[0].yAxis = 1
+        for(let i = 1;i<this.room.length;i++) {
+            this.room[i].xAxis = 0 + this.room[i-1].xAxis + 1 + this.room[i-1].xSize
+            this.room[i].yAxis = 0 + this.room[i-1].yAxis + 1 + this.room[i-1].ySize
         }
     }
 }
@@ -44,5 +46,5 @@ let firstDungeon = new Dungeon(50, 50, ['old place'], 'rome')
 firstDungeon.addRooms(5)
 
 console.log(new Room(5, 6))
-
+firstDungeon.arrangeRooms()
 console.log(firstDungeon)
